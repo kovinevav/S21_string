@@ -38,22 +38,6 @@ void *s21_memcpy(void *dest, const void *src, size_t n) {
   return dest;
 }
 
-void *s21_memmove(void *dest, const void *src, size_t n) {
-  char *ch_dest = (char *)dest;
-  char *ch_src = (char *)src;
-
-  if (ch_dest < ch_src) {
-    for (size_t i = 0; i < n; i++) {
-      ch_dest[i] = ch_src[i];
-    }
-  } else {
-    for (size_t i = n; i != 0; i--) {
-      ch_dest[i] = ch_src[i];
-    }
-  }
-  return dest;
-}
-
 void *s21_memchr(const void *str, int c, size_t n) {
   const unsigned char *ch_str = (const unsigned char *)str;
   unsigned char value = (unsigned char)c;
